@@ -1,0 +1,25 @@
+<div class="container text-center">
+<h1>Advertisments</h1>
+
+  <% @articles.each do |article| %>
+
+    <div class="card mx-auto" style="width: 30rem;">
+      <img class="card-img-top" src="https://i.redd.it/s3nfjfilnl151.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title"><%= article.title %></h3>
+        <p class="card-text"><%= truncate(article.body, :length=>10) %></p>
+        <%= link_to "Read More", article, :class => "btn btn-primary" %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+<%= link_to "Create New Ad", new_article_path , :class => "btn btn-outline-dark" %>
+<br>
+Total Articles: <%= Article.public_count %>
+</div>
+<br>
+
+<footer class="pagination justify-content-center bottom bg-dark text-light mt-3" >
+  <%= will_paginate @articles, previous_label:"PREV", next_label:"NEXT", :class => "btn btn-light my-3 pt-3" %>
+</footer>

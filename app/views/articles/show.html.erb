@@ -1,0 +1,35 @@
+<div class="container text-center">
+<h1>AD Profile</h1>
+
+<div class="card mx-auto" style="width: 60%;">
+    <div class="card-body">
+        <h2 class="card-title"><%= @article.title %></h2>
+        <p class="card-text"><%= @article.body %></p>
+  </div>
+  <img class="card-img-top" src="https://i.redd.it/s3nfjfilnl151.jpg" alt="Card image cap">
+
+</div>
+
+<ul class="btn-group btn-group-toggle">
+  <li class="btn btn-primary">
+    <%= link_to 'Edit', edit_article_path(@article), :class => "btn" %>
+  </li>
+  <li class="btn btn-danger">
+  <%= link_to "Delete", article_path(@article), :class => "btn btn-danger", 
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+  </li>
+  <li class="btn btn-warning">
+    <%= link_to 'Back', articles_path, :class => "btn" %>
+  </li>
+</ul>
+
+<br>
+<hr>
+<h2>Comments:</h2>
+<%= render @article.comments %>
+<hr>
+<h3>Add a comment:</h3>
+<%= render 'comments/form' %>
+
+</div>  
