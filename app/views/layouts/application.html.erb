@@ -25,10 +25,10 @@
                     <%= link_to "Home", root_path, :class => "nav-item nav-link active" %>
                     <a href="/user/edit" class="nav-item nav-link">Profile</a>
                 </div>
-                <div class="navbar-nav ms-auto ">
+                <div class="navbar-nav ms-auto my-2">
                     <a href="/user/sign_in" class="nav-item nav-link btn btn-outline-success mx-3 ">Sign In</a>
                     <a href="/user/sign_up" class="nav-item nav-link btn btn-outline-primary">Sign Up</a>
-                    <%= link_to 'LogOut', destroy_user_session_path, method: :delete, :class => "nav-item nav-link btn btn-outline-danger nav-item nav-link active" %>
+                    <%= link_to 'LogOut', destroy_user_session_path, method: :delete, :class => "mx-3 nav-item nav-link btn btn-outline-danger nav-item nav-link active" %>
                 </div>
             </div>
         </div>
