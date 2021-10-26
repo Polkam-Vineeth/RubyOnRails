@@ -23,17 +23,19 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <%= link_to "Home", root_path, :class => "nav-item nav-link active" %>
-                    <a href="#" class="nav-item nav-link">Profile</a>
-                    <a href="#" class="nav-item nav-link">About</a>
+                    <a href="/user/edit" class="nav-item nav-link">Profile</a>
                 </div>
                 <div class="navbar-nav ms-auto ">
-                    <a href="#" class="nav-item nav-link btn btn-outline-success mx-3 ">Sign In</a>
-                    <a href="#" class="nav-item nav-link btn btn-outline-primary">Sign Up</a>
+                    <a href="/user/sign_in" class="nav-item nav-link btn btn-outline-success mx-3 ">Sign In</a>
+                    <a href="/user/sign_up" class="nav-item nav-link btn btn-outline-primary">Sign Up</a>
+                    <%= link_to 'LogOut', destroy_user_session_path, method: :delete, :class => "nav-item nav-link btn btn-outline-danger nav-item nav-link active" %>
                 </div>
             </div>
         </div>
     </nav>
-
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

@@ -1,7 +1,5 @@
 class ArticlesController < ApplicationController
 
-  http_basic_authenticate_with name: "vin", password: "pol", except: [:index, :show]
-
   def index
     @articles = Article.all.order("created_at DESC").paginate(page: params[:page],per_page: 2)
   end
